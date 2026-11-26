@@ -82,13 +82,9 @@ avatar.addEventListener('error', () => {
 // Paste your real profile links below.
 
 const socialLinks = {
-
-    Instagram: '',
-
-    TikTok: '',
-
-    LinkedIn: ''
-
+    Instagram: 'https://www.instagram.com/uzairnakcuti/',
+    TikTok: 'https://www.tiktok.com/@uzairneedmoney',
+    LinkedIn: 'https://www.linkedin.com/in/muhd-uzair/'
 };
 
 
