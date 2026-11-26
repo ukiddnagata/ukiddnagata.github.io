@@ -1,8 +1,10 @@
+
 /* =========================
    DARK & LIGHT THEME
 ========================= */
 
 :root {
+
     color-scheme: dark;
 
     --bg: #101011;
@@ -13,9 +15,11 @@
     --accent: #a9c7ff;
     --button: #f5f5f7;
     --buttontext: #161616;
+
 }
 
 html[data-theme="light"] {
+
     color-scheme: light;
 
     --bg: #f5f5f7;
@@ -26,6 +30,7 @@ html[data-theme="light"] {
     --accent: #245bc0;
     --button: #1d1d1f;
     --buttontext: #ffffff;
+
 }
 
 
@@ -38,37 +43,52 @@ html[data-theme="light"] {
 }
 
 html {
+
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+
 }
 
 body {
+
     margin: 0;
+
     background: var(--bg);
     color: var(--text);
 
-    font-family: -apple-system, BlinkMacSystemFont,
-                 "Segoe UI", sans-serif;
+    font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 "Segoe UI",
+                 sans-serif;
 
     line-height: 1.55;
 
-    transition: background 0.25s, color 0.25s;
+    transition:
+        background 0.25s,
+        color 0.25s;
+
 }
 
 a {
+
     color: inherit;
     text-decoration: none;
+
 }
 
 a:focus-visible,
 button:focus-visible {
+
     outline: 3px solid var(--accent);
     outline-offset: 5px;
+
 }
 
 .wrap {
+
     width: min(1120px, calc(100% - 40px));
     margin-inline: auto;
+
 }
 
 main {
@@ -85,8 +105,10 @@ main {
 ========================= */
 
 .nav {
+
     position: sticky;
     top: 0;
+
     z-index: 100;
 
     display: flex;
@@ -94,51 +116,70 @@ main {
     justify-content: space-between;
 
     gap: 16px;
+
     padding: 25px 0;
 
     background: var(--bg);
+
 }
 
 .brand {
+
     font-size: 25px;
     font-weight: 800;
     letter-spacing: -1.5px;
+
 }
 
 .brand span,
 h1 span {
+
     color: var(--accent);
+
 }
 
 nav {
+
     display: flex;
     flex-wrap: wrap;
+
     gap: 8px;
 
     font-size: 14px;
     color: var(--muted);
+
 }
 
 nav a {
+
     padding: 8px 12px;
+
     border-radius: 30px;
 
     transition: all 0.3s ease;
+
 }
 
 nav a:hover {
+
     color: var(--accent);
+
 }
 
 nav a[aria-current="page"] {
+
     background: var(--card);
     color: var(--text);
 
-    box-shadow: inset 0 0 0 1px var(--line);
+    box-shadow:
+        inset 0 0 0 1px var(--line);
+
 }
 
 button {
+
     font: inherit;
+
     cursor: pointer;
 
     background: var(--card);
@@ -151,14 +192,21 @@ button {
     height: 43px;
 
     font-size: 21px;
+
 }
 
 #theme {
+
+    flex-shrink: 0;
+
     transition: transform 0.3s ease;
+
 }
 
 #theme:hover {
+
     transform: rotate(20deg);
+
 }
 
 
@@ -167,19 +215,27 @@ button {
 ========================= */
 
 .page.enter {
+
     animation: page-in 0.45s ease both;
+
 }
 
 @keyframes page-in {
 
     from {
+
         opacity: 0;
+
         transform: translateY(12px);
+
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
 
 }
@@ -190,34 +246,43 @@ button {
 ========================= */
 
 .intro {
+
     display: flex;
     justify-content: space-between;
 
     gap: 10px;
 
     color: var(--muted);
+
     font-size: 11px;
     letter-spacing: 1px;
 
     margin: 30px 0 16px;
+
 }
 
 .eyebrow {
+
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     font-weight: 700;
+
 }
 
 .eyebrow i {
+
     width: 8px;
     height: 8px;
 
     background: #62c992;
     border-radius: 50%;
 
-    box-shadow: 0 0 12px #62c99277;
+    box-shadow:
+        0 0 12px #62c99277;
+
 }
 
 
@@ -226,16 +291,20 @@ button {
 ========================= */
 
 .bento {
+
     display: grid;
 
     grid-template-columns:
         repeat(12, minmax(0, 1fr));
 
     gap: 14px;
+
 }
 
 .tile {
+
     min-width: 0;
+
     overflow: hidden;
 
     padding: 28px;
@@ -249,10 +318,13 @@ button {
         transform 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
+
 }
 
 .tile:hover {
+
     border-color: var(--muted);
+
 }
 
 
@@ -261,6 +333,7 @@ button {
 ========================= */
 
 .hero {
+
     grid-column: span 7;
 
     min-height: 355px;
@@ -270,72 +343,97 @@ button {
     justify-content: space-between;
 
     background:
+
         radial-gradient(
             ellipse at 100% 0%,
             #709bff16,
             transparent 65%
         ),
+
         var(--card);
+
 }
 
 .tag {
+
     font-size: 10px;
     font-weight: 750;
+
     letter-spacing: 1.7px;
 
     color: var(--muted);
+
 }
 
 h1,
 h2,
 h3,
 p {
+
     margin: 0;
+
 }
 
 h1 {
+
     font-size: clamp(48px, 7vw, 85px);
 
     letter-spacing: -0.075em;
+
     line-height: 1.05;
 
     margin: 18px 0 8px;
+
 }
 
 h2 {
+
     font-size: clamp(26px, 3vw, 39px);
 
     line-height: 1.12;
+
     letter-spacing: -0.055em;
 
     margin: 12px 0;
+
 }
 
 h3 {
+
     font-size: 23px;
+
     line-height: 1.2;
+
     letter-spacing: -0.035em;
 
     margin: 8px 0 12px;
+
 }
 
 p {
+
     color: var(--muted);
+
     font-size: 15px;
 
     max-width: 55ch;
+
 }
 
 .lead {
+
     font-size: clamp(24px, 3vw, 36px);
+
     font-weight: 650;
 
     letter-spacing: -0.045em;
+
     line-height: 1.15;
 
     color: var(--text);
 
     margin-bottom: 15px;
+
 }
 
 
@@ -344,40 +442,52 @@ p {
 ========================= */
 
 .actions {
+
     display: flex;
     flex-wrap: wrap;
 
     gap: 10px;
+
     margin-top: 25px;
+
 }
 
 .primary,
 .secondary {
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
     padding: 11px 17px;
+
     border-radius: 100px;
 
     font-size: 13px;
     font-weight: 700;
 
     transition: transform 0.2s;
+
 }
 
 .primary {
+
     background: var(--button);
     color: var(--buttontext);
+
 }
 
 .secondary {
+
     border: 1px solid var(--line);
+
 }
 
 .primary:hover,
 .secondary:hover {
+
     transform: translateY(-3px);
+
 }
 
 
@@ -386,9 +496,11 @@ p {
 ========================= */
 
 .portrait {
+
     grid-column: span 3;
 
     padding: 0;
+
     position: relative;
 
     min-height: 355px;
@@ -398,26 +510,34 @@ p {
         #374764,
         #111827
     );
+
 }
 
 .portrait img {
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+
     object-position: center bottom;
 
     position: absolute;
+
     inset: 0;
 
     transition: transform 0.6s ease;
+
 }
 
 .portrait:hover img {
+
     transform: scale(1.05);
+
 }
 
 .portrait-caption {
+
     position: absolute;
 
     bottom: 0;
@@ -435,15 +555,21 @@ p {
 
     display: flex;
     flex-direction: column;
+
 }
 
 .portrait-caption strong {
+
     font-size: 22px;
+
 }
 
 .portrait-caption span {
+
     font-size: 12px;
+
     color: #dddddd;
+
 }
 
 
@@ -452,6 +578,7 @@ p {
 ========================= */
 
 .focus {
+
     grid-column: span 2;
 
     display: flex;
@@ -462,34 +589,49 @@ p {
     color: #e5edff;
 
     padding: 20px;
+
 }
 
 .focus .tag,
 .focus p {
+
     color: #b2c2df;
+
 }
 
 .focus h2 {
+
     font-size: 27px;
+
 }
 
 .orb {
+
     font-size: 70px;
+
     text-align: center;
+
     color: #a9c7ff;
+
     line-height: 1.2;
 
-    animation: rotate-orb 18s linear infinite;
+    animation:
+        rotate-orb 18s linear infinite;
+
 }
 
 @keyframes rotate-orb {
 
     from {
+
         transform: rotate(0);
+
     }
 
     to {
+
         transform: rotate(360deg);
+
     }
 
 }
@@ -500,18 +642,26 @@ p {
 ========================= */
 
 .shortcut {
+
     grid-column: span 3;
+
     min-height: 155px;
+
 }
 
 .shortcut:hover {
+
     transform: translateY(-5px);
 
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.12);
+
 }
 
 .shortcut h2 {
+
     font-size: 29px;
+
 }
 
 
@@ -520,19 +670,27 @@ p {
 ========================= */
 
 .about-grid .about {
+
     grid-column: span 7;
+
 }
 
 .about-grid .skills {
+
     grid-column: span 5;
+
 }
 
 .about p {
+
     line-height: 1.8;
+
 }
 
 .learning {
+
     grid-column: span 12;
+
     min-height: 180px;
 
     background: #d8e8ff;
@@ -543,45 +701,64 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .learning .tag {
+
     color: #536483;
+
 }
 
 .learning h2 {
+
     font-size: 35px;
+
 }
 
 .symbol {
+
     font-size: 45px;
+
     font-weight: 700;
+
     letter-spacing: -5px;
+
 }
 
 .chips {
+
     display: flex;
     flex-wrap: wrap;
+
     gap: 7px;
 
     margin-top: 16px;
+
 }
 
 .chips span {
+
     padding: 6px 11px;
 
     border: 1px solid var(--line);
+
     border-radius: 30px;
 
     font-size: 12px;
+
     color: var(--muted);
 
     transition: all 0.25s;
+
 }
 
 .chips span:hover {
+
     color: var(--accent);
+
     border-color: var(--accent);
+
 }
 
 
@@ -590,10 +767,13 @@ p {
 ========================= */
 
 .section {
+
     margin-top: 30px;
+
 }
 
 .section-head {
+
     display: flex;
     align-items: end;
     justify-content: space-between;
@@ -601,20 +781,29 @@ p {
     gap: 15px;
 
     margin-bottom: 20px;
+
 }
 
 .section-head h2 {
+
     font-size: clamp(32px, 5vw, 50px);
+
 }
 
 .section-head a {
+
     color: var(--muted);
+
     font-size: 13px;
+
     white-space: nowrap;
+
 }
 
 .section-head a:hover {
+
     color: var(--accent);
+
 }
 
 
@@ -623,43 +812,65 @@ p {
 ========================= */
 
 .projects {
+
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 14px;
+
 }
 
 .project {
+
     padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
 }
 
 .project:hover {
+
     transform: translateY(-3px);
+
 }
 
 .art {
+
     height: 190px;
 
     position: relative;
 
     display: grid;
+
     place-items: center;
 
     overflow: hidden;
+
+    flex-shrink: 0;
+
 }
 
 .art svg {
+
     width: 85%;
     height: 90%;
 
-    transition: transform 0.5s ease;
+    transition:
+        transform 0.5s ease;
+
 }
 
 .project:hover .art svg {
+
     transform: scale(1.08);
+
 }
 
-.art span {
+.art > span {
+
     position: absolute;
 
     bottom: 10px;
@@ -667,53 +878,141 @@ p {
 
     font-size: 9px;
     font-weight: 700;
+
     letter-spacing: 1.5px;
+
 }
 
 .mushroom {
+
     background: #193d32;
     color: #a7e6be;
+
 }
 
 .monitor {
+
     background: #243653;
     color: #adc9ff;
+
 }
 
 .network {
+
     background: #392d50;
     color: #d4baff;
+
 }
 
 .mobile {
+
     background: #49362a;
     color: #ffd3a7;
+
 }
 
 .project-body {
+
     padding: 24px;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
 }
 
 .project-link {
+
     display: inline-block;
 
     margin-top: 18px;
 
     color: var(--accent);
+
     font-size: 13px;
     font-weight: 650;
+
 }
 
 .project-link:hover {
+
     text-decoration: underline;
+
 }
 
 
 /* =========================
-   ACHIEVEMENTS
+   COMPTIA CYSA+
+========================= */
+
+.comptia {
+
+    background: radial-gradient(
+        ellipse at top right,
+        #8b202b,
+        #290d16
+    );
+
+    color: #ffffff;
+
+}
+
+.comptia-logo {
+
+    text-align: center;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+.comptia-logo strong {
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+}
+
+.comptia-logo h2 {
+
+    font-size: 62px;
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    margin: 0;
+
+    line-height: 1.1;
+
+}
+
+.comptia-logo small {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+
+}
+
+.project:hover .comptia-logo {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================
+   CTF CERTIFICATES
 ========================= */
 
 .cert-art {
+
     background: linear-gradient(
         135deg,
         #253653,
@@ -721,9 +1020,11 @@ p {
     );
 
     color: #c3d7ff;
+
 }
 
 .cert-art.pending {
+
     background: linear-gradient(
         135deg,
         #343438,
@@ -731,20 +1032,42 @@ p {
     );
 
     color: #b0b0b8;
+
 }
 
 .cert-art svg {
+
     width: 100px;
     height: 100px;
+
 }
 
 .cert-status {
+
     display: inline-block;
 
     margin-top: 18px;
 
     font-size: 13px;
+
     color: var(--muted);
+
+}
+
+.chips .pending-badge {
+
+    background: #d9a44115;
+
+    border-color: #d9a44155;
+
+    color: #d9a441;
+
+}
+
+html[data-theme="light"] .chips .pending-badge {
+
+    color: #916000;
+
 }
 
 
@@ -753,21 +1076,34 @@ p {
 ========================= */
 
 .social-card {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 14px;
 
-    min-height: 240px;
+    min-height: 250px;
+
+    cursor: pointer;
+
 }
 
 .social-card:hover {
+
     transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.12);
+
 }
 
 .social-icon {
+
     display: grid;
+
     place-items: center;
 
     width: 58px;
@@ -778,19 +1114,26 @@ p {
     font-size: 30px;
     font-weight: 800;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.4s ease;
+
 }
 
 .social-card:hover .social-icon {
+
     transform: rotate(-8deg) scale(1.08);
+
 }
 
 .social-icon svg {
+
     width: 30px;
     height: 30px;
+
 }
 
 .social-icon.instagram {
+
     background: linear-gradient(
         135deg,
         #833ab4,
@@ -799,34 +1142,57 @@ p {
     );
 
     color: white;
+
 }
 
 .social-icon.tiktok {
+
     background: #080808;
+
     color: #ffffff;
 
-    text-shadow:
-        -2px 1px #25f4ee,
-        2px -1px #fe2c55;
+    filter: drop-shadow(
+        1px 1px 0 #fe2c55
+    );
+
 }
 
 .social-icon.linkedin {
+
     background: #0a66c2;
+
     color: white;
+
 }
 
 .social-icon.github {
+
     background: #24292e;
+
     color: white;
+
 }
 
-.social-card .project-link,
-.social-card .cert-status {
+.social-card .project-link {
+
     margin-top: auto;
+
 }
 
 .social-card h3 {
+
     margin-bottom: 5px;
+
+}
+
+.social-card .username {
+
+    font-size: 13px;
+
+    color: var(--accent);
+
+    margin-bottom: 8px;
+
 }
 
 
@@ -835,8 +1201,11 @@ p {
 ========================= */
 
 .contact {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     gap: 24px;
@@ -844,12 +1213,15 @@ p {
     min-height: 230px;
 
     background:
+
         radial-gradient(
             ellipse at 100% 50%,
             #709bff20,
             transparent 65%
         ),
+
         var(--card);
+
 }
 
 
@@ -858,8 +1230,11 @@ p {
 ========================= */
 
 footer {
+
     display: flex;
+
     justify-content: space-between;
+
     flex-wrap: wrap;
 
     gap: 10px;
@@ -867,7 +1242,9 @@ footer {
     padding: 35px 0;
 
     color: var(--muted);
+
     font-size: 12px;
+
 }
 
 
@@ -876,18 +1253,42 @@ footer {
 ========================= */
 
 .tile.reveal {
+
     opacity: 0;
+
     transform: translateY(25px) scale(0.97);
 
     transition:
+
         opacity 0.65s ease,
+
         transform 0.65s ease,
-        border-color 0.3s ease;
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
+
 }
 
 .tile.reveal.visible {
+
     opacity: 1;
+
     transform: translateY(0) scale(1);
+
+}
+
+.tile.reveal.visible.shortcut:hover,
+.tile.reveal.visible.social-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.tile.reveal.visible.project:hover {
+
+    transform: translateY(-3px);
+
 }
 
 
@@ -898,25 +1299,36 @@ footer {
 @media (max-width: 950px) {
 
     .hero {
+
         grid-column: span 8;
+
     }
 
     .portrait {
+
         grid-column: span 4;
+
     }
 
     .focus {
+
         grid-column: span 12;
+
         min-height: 220px;
+
     }
 
     .about-grid .about,
     .about-grid .skills {
+
         grid-column: span 6;
+
     }
 
     .learning {
+
         min-height: 220px;
+
     }
 
 }
@@ -929,17 +1341,25 @@ footer {
 @media (max-width: 800px) {
 
     .nav {
+
         flex-wrap: wrap;
+
     }
 
     .nav nav {
+
         order: 3;
+
         width: 100%;
+
         justify-content: center;
+
     }
 
     .shortcut {
+
         grid-column: span 6;
+
     }
 
 }
@@ -952,108 +1372,204 @@ footer {
 @media (max-width: 600px) {
 
     .wrap {
+
         width: calc(100% - 28px);
+
     }
 
     .nav {
+
         gap: 8px;
+
         padding: 18px 0;
+
     }
 
     .brand {
+
         font-size: 21px;
+
     }
 
     .nav #theme {
+
         margin-left: auto;
+
     }
 
     nav {
+
         gap: 3px;
+
         font-size: 12px;
+
     }
 
     nav a {
+
         padding: 7px 9px;
+
     }
 
     .intro {
+
         font-size: 9px;
+
         margin-top: 15px;
+
     }
 
     .bento {
+
         gap: 10px;
+
     }
 
     .hero,
     .about-grid .about,
     .about-grid .skills {
+
         grid-column: span 12;
+
     }
 
     .portrait,
     .focus {
+
         grid-column: span 6;
+
         min-height: 260px;
+
     }
 
     .learning {
+
         grid-column: span 12;
+
         min-height: 160px;
+
     }
 
     .hero {
+
         min-height: 330px;
+
     }
 
     .tile {
+
         border-radius: 21px;
+
         padding: 22px;
+
     }
 
     .portrait,
     .project {
+
         padding: 0;
+
     }
 
     .focus {
+
         padding: 16px;
+
     }
 
     .focus h2 {
+
         font-size: 24px;
+
     }
 
     .shortcut {
+
         padding: 18px;
+
     }
 
     .shortcut h2 {
+
         font-size: 23px;
+
     }
 
     .projects {
+
         grid-template-columns: 1fr;
+
     }
 
     .section {
+
         margin-top: 25px;
+
     }
 
     .section-head {
+
         align-items: start;
+
         flex-direction: column;
+
         gap: 0;
+
     }
 
     .contact {
+
         align-items: start;
+
         flex-direction: column;
+
     }
 
     .art {
+
         height: 165px;
+
+    }
+
+    .comptia-logo h2 {
+
+        font-size: 52px;
+
+    }
+
+    .social-card {
+
+        min-height: 220px;
+
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    .portrait,
+    .focus,
+    .shortcut {
+
+        grid-column: span 12;
+
+    }
+
+    .portrait {
+
+        min-height: 350px;
+
+    }
+
+    h1 {
+
+        font-size: 42px;
+
     }
 
 }
@@ -1068,14 +1584,21 @@ footer {
     *,
     *::before,
     *::after {
+
         scroll-behavior: auto !important;
+
         transition: none !important;
+
         animation: none !important;
+
     }
 
     .tile.reveal {
+
         opacity: 1;
+
         transform: none;
+
     }
 
 }
