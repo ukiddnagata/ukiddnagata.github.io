@@ -1,9 +1,13 @@
+
 // =========================
 // DARK & LIGHT MODE
 // =========================
 
 const root = document.documentElement;
-const themeButton = document.querySelector('#theme');
+
+const themeButton =
+    document.querySelector('#theme');
+
 
 function applyTheme(theme) {
 
@@ -21,16 +25,22 @@ function applyTheme(theme) {
 
 }
 
+
 let savedTheme;
 
 try {
 
-    savedTheme = localStorage.getItem('ukidd-theme');
+    savedTheme =
+        localStorage.getItem('ukidd-theme');
 
 } catch {}
 
 
-applyTheme(savedTheme === 'light' ? 'light' : 'dark');
+applyTheme(
+    savedTheme === 'light'
+        ? 'light'
+        : 'dark'
+);
 
 
 themeButton.addEventListener('click', () => {
@@ -54,6 +64,7 @@ themeButton.addEventListener('click', () => {
 });
 
 
+
 // =========================
 // AUTOMATIC FOOTER YEAR
 // =========================
@@ -62,69 +73,45 @@ document.querySelector('#year').textContent =
     new Date().getFullYear();
 
 
-// =========================
-// PROFILE IMAGE
-// =========================
-
-const avatar = document.querySelector('#avatar');
-
-avatar.addEventListener('error', () => {
-
-    avatar.hidden = true;
-
-});
-
 
 // =========================
-// SOCIAL MEDIA LINKS
+// PROFILE IMAGE FALLBACK
 // =========================
 
-// Paste your real profile links below.
-
-const socialLinks = {
-    Instagram: 'https://www.instagram.com/uzairnakcuti/',
-    TikTok: 'https://www.tiktok.com/@uzairneedmoney',
-    LinkedIn: 'https://www.linkedin.com/in/muhd-uzair/'
-};
+const avatar =
+    document.querySelector('#avatar');
 
 
-const socialCards =
-    document.querySelectorAll('.social-card');
+function fallbackAvatar() {
 
+    if (avatar.dataset.fallback === 'true') {
 
-socialCards.forEach(card => {
+        avatar.hidden = true;
 
-    const platform =
-        card.querySelector('h3').textContent.trim();
-
-    const url = socialLinks[platform];
-
-    if (!url) return;
-
-
-    const link = document.createElement('a');
-
-    link.className = 'project-link';
-
-    link.href = url;
-
-    link.target = '_blank';
-
-    link.rel = 'noopener noreferrer';
-
-    link.textContent = 'Open Profile ↗';
-
-
-    const placeholder =
-        card.querySelector('.cert-status');
-
-    if (placeholder) {
-
-        placeholder.replaceWith(link);
+        return;
 
     }
 
-});
+    avatar.dataset.fallback = 'true';
+
+    avatar.src =
+        'https://github.com/ukiddnagata.png?size=800';
+
+}
+
+
+avatar.addEventListener(
+    'error',
+    fallbackAvatar
+);
+
+
+if (avatar.complete && avatar.naturalWidth === 0) {
+
+    fallbackAvatar();
+
+}
+
 
 
 // =========================
@@ -133,27 +120,34 @@ socialCards.forEach(card => {
 
 let observer;
 
+
 if ('IntersectionObserver' in window) {
 
-    observer = new IntersectionObserver(entries => {
+    observer = new IntersectionObserver(
 
-        entries.forEach(entry => {
+        entries => {
 
-            if (entry.isIntersecting) {
+            entries.forEach(entry => {
 
-                entry.target.classList.add('visible');
+                if (entry.isIntersecting) {
 
-                observer.unobserve(entry.target);
+                    entry.target.classList.add('visible');
 
-            }
+                    observer.unobserve(entry.target);
 
-        });
+                }
 
-    }, {
+            });
 
-        threshold: 0.08
+        },
 
-    });
+        {
+
+            threshold: 0.08
+
+        }
+
+    );
 
 }
 
@@ -164,7 +158,9 @@ function animateCards(page) {
 
     observer.disconnect();
 
-    const cards = page.querySelectorAll('.tile');
+    const cards =
+        page.querySelectorAll('.tile');
+
 
     cards.forEach(card => {
 
@@ -179,13 +175,17 @@ function animateCards(page) {
 }
 
 
+
 // =========================
 // PAGE NAVIGATION
 // =========================
 
 const pages = [
+
     ...document.querySelectorAll('main > .page')
+
 ];
+
 
 function showPage() {
 
@@ -194,7 +194,11 @@ function showPage() {
 
 
     const activePage =
-        pages.find(page => page.id === requestedPage)
+
+        pages.find(
+            page => page.id === requestedPage
+        )
+
         || pages[0];
 
 
@@ -202,7 +206,8 @@ function showPage() {
 
     pages.forEach(page => {
 
-        page.hidden = page !== activePage;
+        page.hidden =
+            page !== activePage;
 
         page.classList.remove('enter');
 
@@ -222,27 +227,36 @@ function showPage() {
 
         if (link.hash === '#' + activePage.id) {
 
-            link.setAttribute('aria-current', 'page');
+            link.setAttribute(
+                'aria-current',
+                'page'
+            );
 
         } else {
 
-            link.removeAttribute('aria-current');
+            link.removeAttribute(
+                'aria-current'
+            );
 
         }
 
     });
 
 
-    // Change browser tab title.
+    // Update browser tab title.
 
     const pageTitle =
+
         activePage.id.charAt(0).toUpperCase()
+
         + activePage.id.slice(1);
 
-    document.title = pageTitle + ' | UkiddGj';
+
+    document.title =
+        pageTitle + ' | UkiddGj';
 
 
-    // Return to top when switching pages.
+    // Return to top when switching page.
 
     window.scrollTo({
 
@@ -260,11 +274,23 @@ function showPage() {
 }
 
 
-// Detect navigation changes.
 
-window.addEventListener('hashchange', showPage);
+// =========================
+// DETECT PAGE CHANGES
+// =========================
+
+window.addEventListener(
+
+    'hashchange',
+
+    showPage
+
+);
 
 
-// Load initial page.
+
+// =========================
+// LOAD INITIAL PAGE
+// =========================
 
 showPage();
